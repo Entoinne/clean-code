@@ -1,14 +1,14 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
-import { GetAllOrdersService } from '../../service/useCase/get-all-orders.service';
-import { GetOrdersBeforeDateService } from '../../service/useCase/get-orders-before-date.service';
-import { GetOrdersAfterDateService } from '../../service/useCase/get-orders-after-date.service';
-import { GetOrdersByCustomerService } from '../../service/useCase/get-orders-by-customer.service';
-import { CreateOrderService } from '../../service/useCase/create-order.service';
-import { CreateOrderDtoInterface } from '../../domain/model/dto/create-order.dto.interface';
-import { ChangeStatusOrderToPaidService } from '../../service/useCase/change-order-status-to-paid.service';
-import { ChangeStatusOrderToCanceledService } from '../../service/useCase/change-order-status-to-cancel.service';
-import { DeleteOrderByIdService } from '../../service/useCase/delete-order-by-id.service';
 import Order from '../../domain/model/entity/order.orm-entity';
+import { GetAllOrdersService } from '../../domain/service/useCase/get-all-orders.service';
+import { GetOrdersBeforeDateService } from '../../domain/service/useCase/get-orders-before-date.service';
+import { GetOrdersAfterDateService } from '../../domain/service/useCase/get-orders-after-date.service';
+import { GetOrdersByCustomerService } from '../../domain/service/useCase/get-orders-by-customer.service';
+import { CreateOrderService } from '../../domain/service/useCase/create-order.service';
+import { ChangeStatusOrderToPaidService } from '../../domain/service/useCase/change-order-status-to-paid.service';
+import { ChangeStatusOrderToCanceledService } from '../../domain/service/useCase/change-order-status-to-cancel.service';
+import { DeleteOrderByIdService } from '../../domain/service/useCase/delete-order-by-id.service';
+import { CreateOrderDtoInterface } from '../../domain/model/dto/create-order.dto.interface';
 @Controller('/orders')
 export default class OrderController {
     constructor(
@@ -43,7 +43,7 @@ export default class OrderController {
         return await this.getOrdersByCustomerService.getOrdersByCustomer(customer);
     }
 
-    @Post('/add')
+    @Post()
     async addOrder(@Body() createOrderDto: CreateOrderDtoInterface): Promise<Order> {
         return (await this.createOrderService.createOrder(createOrderDto)) as Order;
     }

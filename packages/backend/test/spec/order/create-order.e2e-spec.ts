@@ -5,7 +5,6 @@ import DataSource from '@src/modules/database/config/typeorm.config';
 import { cleanApp } from '@test/utils/fixture/shared/app/clean-app';
 import request from 'supertest';
 import { orderBuilder } from './order.e2e-builder';
-import { givenExistingOrder } from './order.e2e-fixture';
 
 describe('create order', () => {
     let app: NestExpressApplication;
@@ -19,7 +18,7 @@ describe('create order', () => {
     it('should return the order created', async () => {
         const order = orderBuilder().build();
         const response = await request(app.getHttpServer())
-            .post('/api/orders/add')
+            .post('/api/orders/')
             .send(order);
         expect(response.status).toEqual(201);
         expect(new Date(response.body.createdAt)).toEqual(order.createdAt);

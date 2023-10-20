@@ -1,6 +1,6 @@
 import { RepositoryInterface } from "@src/modules/shared/domain/port/db/repository.interface";
-import Order from "../../../model/entity/order.orm-entity";
-import { CreateOrderDtoInterface } from "../../../model/dto/create-order.dto.interface";
+import Order from "./model/entity/order.orm-entity";
+import { CreateOrderDtoInterface } from "./model/dto/create-order.dto.interface";
 
 export interface OrderRepositoryInterface extends RepositoryInterface {
     getAllOrders(): Promise<Order[]>;

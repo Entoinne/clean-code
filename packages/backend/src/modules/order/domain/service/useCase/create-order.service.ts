@@ -1,6 +1,7 @@
-import { CreateOrderDtoInterface } from "../../domain/model/dto/create-order.dto.interface";
-import Order from "../../domain/model/entity/order.orm-entity";
-import { OrderRepositoryInterface } from "../../domain/port/db/repository/order.repository.interface";
+import { CreateOrderDtoInterface } from "../../model/dto/create-order.dto.interface";
+import Order from "../../model/entity/order.orm-entity";
+import { OrderRepositoryInterface } from "../../order.repository.interface";
+
 
 export class CreateOrderService {
     constructor(

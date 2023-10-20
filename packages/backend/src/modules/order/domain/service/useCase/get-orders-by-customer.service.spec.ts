@@ -1,4 +1,4 @@
-import { OrderStatusEnum } from "../../domain/model/const/order-status.enum";
+import { OrderStatusEnum } from "../../model/const/order-status.enum";
 import { GetOrdersByCustomerService } from "./get-orders-by-customer.service";
 
 

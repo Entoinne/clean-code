@@ -1,8 +1,8 @@
 import { DataSource, Repository } from 'typeorm';
 import { InjectDataSource } from '@nestjs/typeorm';
 import Order from '@src/modules/order/domain/model/entity/order.orm-entity';
-import { CreateOrderDtoInterface } from '../../../model/dto/create-order.dto.interface';
-import { OrderStatusEnum } from '../../../model/const/order-status.enum';
+import { CreateOrderDtoInterface } from '../domain/model/dto/create-order.dto.interface';
+import { OrderStatusEnum } from '../domain/model/const/order-status.enum';
 import { Inject } from '@nestjs/common';
 import { OrmEntityToDomainEntityMapper } from '@src/modules/shared/infrastructure/db/ormEntityToDomainEntityMapper.service';
 

@@ -1,4 +1,4 @@
-import { OrderRepositoryInterface } from "../../domain/port/db/repository/order.repository.interface";
+import { OrderRepositoryInterface } from "../../order.repository.interface";
 
 export class GetOrdersByCustomerService {
     constructor(

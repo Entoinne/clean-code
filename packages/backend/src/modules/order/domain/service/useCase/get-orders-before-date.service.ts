@@ -1,5 +1,5 @@
-import Order from "../../domain/model/entity/order.orm-entity";
-import { OrderRepositoryInterface } from "../../domain/port/db/repository/order.repository.interface";
+import Order from "../../model/entity/order.orm-entity";
+import { OrderRepositoryInterface } from "../../order.repository.interface";
 
 export class GetOrdersBeforeDateService {
     constructor(

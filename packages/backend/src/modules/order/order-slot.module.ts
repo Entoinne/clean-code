@@ -1,16 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import Order from '@src/modules/order/domain/model/entity/order.orm-entity';
-import OrderRepository from '@src/modules/order/domain/port/db/repository/order.repository';
+import OrderRepository from '@src/modules/order/infrastructure/order.repository';
 import OrderController from '@src/modules/order/presentation/controller/order.controller';
-import { GetAllOrdersService } from './service/useCase/get-all-orders.service';
-import { GetOrdersBeforeDateService } from './service/useCase/get-orders-before-date.service';
-import { GetOrdersAfterDateService } from './service/useCase/get-orders-after-date.service';
-import { GetOrdersByCustomerService } from './service/useCase/get-orders-by-customer.service';
-import { CreateOrderService } from './service/useCase/create-order.service';
-import { ChangeStatusOrderToPaidService } from './service/useCase/change-order-status-to-paid.service';
-import { ChangeStatusOrderToCanceledService } from './service/useCase/change-order-status-to-cancel.service';
-import { DeleteOrderByIdService } from './service/useCase/delete-order-by-id.service';
+import { GetAllOrdersService } from './domain/service/useCase/get-all-orders.service';
+import { GetOrdersBeforeDateService } from './domain/service/useCase/get-orders-before-date.service';
+import { GetOrdersAfterDateService } from './domain/service/useCase/get-orders-after-date.service';
+import { GetOrdersByCustomerService } from './domain/service/useCase/get-orders-by-customer.service';
+import { CreateOrderService } from './domain/service/useCase/create-order.service';
+import { ChangeStatusOrderToPaidService } from './domain/service/useCase/change-order-status-to-paid.service';
+import { ChangeStatusOrderToCanceledService } from './domain/service/useCase/change-order-status-to-cancel.service';
+import { DeleteOrderByIdService } from './domain/service/useCase/delete-order-by-id.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Order])],
